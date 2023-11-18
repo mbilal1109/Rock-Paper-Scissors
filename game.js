@@ -12,37 +12,48 @@ function getComputerChoice() {
 }
 
 // Plays a single round of the game
-function singleGameRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
+    console.log(`Computer Picked: ${computerSelection}`);
     
     if(playerSelection == computerSelection) {
-        return 'Its a Tie!';
+        console.log('Its a Tie!');
+        return;
     }
     else if(playerSelection == 'rock' && computerSelection == 'paper') {
-        console.log(`Computer Picked: ${computerSelection}`)
-        return 'You Lose!, Paper beats Rock!';
+        console.log('You Lose!, Paper beats Rock!');
+        return;
     }
     else if(playerSelection == 'rock' && computerSelection == 'scissor') {
-        console.log(`Computer Picked: ${computerSelection}`)
-        return 'You Win!, Rock beats Scissor!';
+        console.log('You Win!, Rock beats Scissor!');
+        return;
     }
     else if(playerSelection == 'paper' && computerSelection == 'rock') {
-        console.log(`Computer Picked: ${computerSelection}`)
-        return 'You Win!, Paper beats Rock!';
+        console.log('You Win!, Paper beats Rock!');
+        return;
     }
     else if(playerSelection == 'paper' && computerSelection == 'scissor') {
-        console.log(`Computer Picked: ${computerSelection}`)
-        return 'You Lose!, Scissor beats Paper!';
+        console.log('You Lose!, Scissor beats Paper!');
+        return;
     }
     else if(playerSelection == 'scissor' && computerSelection == 'rock') {
-        console.log(`Computer Picked: ${computerSelection}`)
-        return 'You Lose!, Rock beats Scissor!';
+        console.log('You Lose!, Rock beats Scissor!');
+        return;
     }
     else if(playerSelection == 'scissor' && computerSelection == 'paper') {
-        console.log(`Computer Picked: ${computerSelection}`)
-        return 'You Win!, Scissor beats Paper!';
+        console.log('You Win!, Scissor beats Paper!');
+        return;
     }
 }
 
-console.log(singleGameRound('Rock', getComputerChoice()));
+function game() {
+    let selection = prompt('Select 1 Option: Rock, Paper, or Scissor');
+    for (let i = 1; i <= 5; i++) {
+        console.log('Round: ' + i);
+        playRound(selection, getComputerChoice());
+    }
+    return "Game Finished!";
+}
+
+console.log(game());
