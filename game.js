@@ -21,29 +21,35 @@ function playRound(playerSelection, computerSelection) {
         console.log('Its a Tie!');
         return;
     }
-    else if(playerSelection == 'rock' && computerSelection == 'paper') {
-        console.log('You Lose!, Paper beats Rock!');
-        return;
+    else if(playerSelection == 'rock') {
+        if(computerSelection == 'paper') {
+            console.log('You Lose!, Paper beats Rock!');
+            return;
+        }
+        else if(computerSelection == 'scissor') {
+            console.log('You Win!, Rock beats Scissor!');
+            return;
+        }
     }
-    else if(playerSelection == 'rock' && computerSelection == 'scissor') {
-        console.log('You Win!, Rock beats Scissor!');
-        return;
+    else if(playerSelection == 'paper') {
+        if(computerSelection == 'rock') {
+            console.log('You Win!, Paper beats Rock!');
+            return;
+        }
+        else if(computerSelection == 'scissor') {
+            console.log('You Lose!, Scissor beats Paper!');
+            return;
+        }
     }
-    else if(playerSelection == 'paper' && computerSelection == 'rock') {
-        console.log('You Win!, Paper beats Rock!');
-        return;
-    }
-    else if(playerSelection == 'paper' && computerSelection == 'scissor') {
-        console.log('You Lose!, Scissor beats Paper!');
-        return;
-    }
-    else if(playerSelection == 'scissor' && computerSelection == 'rock') {
-        console.log('You Lose!, Rock beats Scissor!');
-        return;
-    }
-    else if(playerSelection == 'scissor' && computerSelection == 'paper') {
-        console.log('You Win!, Scissor beats Paper!');
-        return;
+    else {
+        if(computerSelection == 'rock') {
+            console.log('You Lose!, Rock beats Scissor!');
+            return;
+        }
+        else if(computerSelection == 'paper') {
+            console.log('You Win!, Scissor beats Paper!');
+            return;
+        }
     }
 }
 
